@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Useless Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            background: dodgerblue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The Ultimate Useless Application Form</h1>
+    <p>Because life’s too short for serious forms!</p>
+
+    <!-- Section 1: Personal Info -->
+    <div class="section active" id="section1">
+        <h2>Section 1: Personal (But Not Really) Info</h2>
+        <label>Name (Or Your Secret Spy Name):</label><br>
+        <input type="text" placeholder="e.g., Agent Chaiwala"><br><br>
+
+        <label>Age (Or How Old You Feel Inside):</label><br>
+        <select>
+            <option>5 (Because adulting is hard)</option>
+            <option>18 (Ready to conquer the world!)</option>
+            <option>45 (Back pain included)</option>
+            <option>100+ (Timeless legend)</option>
+        </select><br><br>
+
+        <button onclick="goToSection(2)">Go to Life Skills Assessment</button>
+        <button onclick="goToSection(3)">Skip to Tech Compatibility</button>
+    </div>
+
+    <!-- Section 2: Life Skills -->
+    <div class="section" id="section2">
+        <h2>Section 2: Life Skills Assessment</h2>
+        <label>Can you cook?</label><br>
+        <input type="radio" name="cook"> Yes, I am a MasterChef!<br>
+        <input type="radio" name="cook"> No, but I can microwave like a pro.<br>
+        <input type="radio" name="cook"> I once burned water.<br><br>
+
+        <label>How do you handle stress?</label><br>
+        <select>
+            <option>Sleep</option>
+            <option>Eat</option>
+            <option>Cry and watch memes</option>
+            <option>All of the above at the same time</option>
+        </select><br><br>
+
+        <button onclick="goToSection(3)">Go to Tech Compatibility</button>
+        <button onclick="goToSection(4)">Skip to Human Check</button>
+    </div>
+
+    <!-- Section 3: Tech Compatibility -->
+    <div class="section" id="section3">
+        <h2>Section 3: Technology Compatibility Test</h2>
+        <label>How do you fix a slow internet connection?</label><br>
+        <input type="radio" name="wifi"> Restart the router.<br>
+        <input type="radio" name="wifi"> Pray to the WiFi gods.<br>
+        <input type="radio" name="wifi"> Turn it off and pretend it’s not happening.<br><br>
+
+        <label>What’s your go-to reaction when tech doesn’t work?</label><br>
+        <select>
+            <option>Click it harder</option>
+            <option>Restart everything</option>
+            <option>Blame the government</option>
+        </select><br><br>
+
+        <button onclick="goToSection(4)">Go to Human Check</button>
+        <button onclick="goToSection(5)">Skip to Final Questions</button>
+    </div>
+
+    <!-- Section 4: Human Check -->
+    <div class="section" id="section4">
+        <h2>Section 4: The "Are You Human?" Check</h2>
+        <label>Pick all the squares that have a cat judging you.</label><br>
+        <p>(There are no cats, you’ve been tricked!)</p><br>
+
+        <label>Solve this highly advanced math problem:</label><br>
+        <p>5 + (2 x 0) = ?</p>
+        <input type="radio" name="math"> 5<br>
+        <input type="radio" name="math"> 7<br>
+        <input type="radio" name="math"> I failed math, let me live.<br><br>
+
+        <button onclick="goToSection(5)">Submit Form</button>
+    </div>
+
+    <!-- Section 5: Final Message -->
+    <div class="section" id="section5">
+        <h2>Congratulations!</h2>
+        <p>You have successfully wasted 5 minutes of your life. We are proud of you!</p>
+        <p>Click below to restart the form or submit it to nowhere.</p>
+        <button onclick="goToSection(1)">Restart Form</button>
+    </div>
+</div>
+
+<script>
+    function goToSection(sectionNumber) {
+        // Hide all sections
+        var sections = document.getElementsByClassName('section');
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].classList.remove('active');
+        }
+        // Show the selected section
+        document.getElementById('section' + sectionNumber).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
